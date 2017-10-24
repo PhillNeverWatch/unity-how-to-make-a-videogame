@@ -18,6 +18,6 @@ public class FlyMovement : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		transform.RotateAround(center.position, Vector3.up, flySpeed * Time.deltaTime); // Vector.up is like coordinates 0/1/0
+		transform.RotateAround(center.position, Vector3.up, flySpeed * Time.deltaTime);
 	}
 }
