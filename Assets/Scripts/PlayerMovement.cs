@@ -10,7 +10,9 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 movement;
     private float turningSpeed = 20f;
     private Rigidbody playerRigidbody;
-
+    [SerializeField]
+    private RandomSoundPlayer playerFootsteps;
+    
 	// Use this for initialization
 	void Start ()
 	{
@@ -44,11 +46,17 @@ public class PlayerMovement : MonoBehaviour {
 
             // ...then play the jump animation.
             playerAnimator.SetFloat("Speed", 3f);
+
+            // ...play footstep sounds
+            playerFootsteps.enabled = true;
         }
         else
         {
             // Otherwise, don't play the jump animation
             playerAnimator.SetFloat("Speed", 0f);
+
+            // Don't play footsteps
+            playerFootsteps.enabled = false;
         }
     }
 }
